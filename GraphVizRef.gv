@@ -33,7 +33,7 @@ digraph G {
     }
 
     subgraph "clusterShapes" {
-        label="Shape Reference";
+        label="shape=";
         edge [comment="Wildcard node added automatic in EG."];
         node [comment="Wildcard node added automatic in EG."];
         "Oval" [label="ellipse / oval"];
@@ -41,11 +41,12 @@ digraph G {
                   label="circle", 
                   fillcolor="powderblue", 
                   colorscheme="svg"];
-        "Square" [shape="square"];
+        "Square" [shape="square", 
+                  label="square"];
         "Egg" [shape="egg", 
                label="egg"];
-        "Box" [shape="polygon", 
-               label="box / polygon"];
+        "Box" [shape="box", 
+               label="box"];
         "Diamond" [shape="diamond", 
                    label="diamond"];
         "Trapezium" [shape="trapezium", 
@@ -67,8 +68,9 @@ digraph G {
                 label="star"];
         Circle -> Oval  [style="bold", 
                          label="bold"];
-        Circle -> Box  [style="invis", 
-                        label="dashed"];
+        Circle -> Box  [color="white", 
+                        style="solid", 
+                        label="invis"];
         Circle -> Diamond  [style="dashed", 
                             label="dashed"];
         Circle -> House  [style="tapered", 
@@ -79,7 +81,8 @@ digraph G {
         Triangle -> Circle  [style="invis"];
         Triangle -> Octagon  [style="solid", 
                               label="Up to"];
-        Trapezium -> Circle  [style="invis"];
+        Trapezium -> Circle  [style="solid", 
+                              label="style=solid"];
         Square -> Circle  [style="invis"];
         Square -> Star  [style="invis"];
     }
